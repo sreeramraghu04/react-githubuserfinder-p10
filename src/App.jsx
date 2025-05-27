@@ -15,32 +15,43 @@ function App() {
   };
 
   return (
-    <div>
-      <nav className="bg-gray-300 pb-3 shadow-xl">
-        <h1 className="flex">
-          <a href="https://github.com/">
+    <div className="min-h-screen bg-white">
+      {/* Navbar */}
+      <nav className="bg-gray-300 shadow-xl px-4 py-3 flex flex-col sm:flex-row items-center sm:justify-between">
+        <div className="flex items-center gap-2">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png"
-              alt=""
-              className="w-[75px] p-3 rounded"
+              alt="GitHub logo"
+              className="w-14 p-1 rounded"
             />
           </a>
-          <h1 className="mt-2 font-bold text-3xl">GitHub User Finder</h1>
-        </h1>
-        <p className="ml-20 mt-[-35px]">
-          To find the users details
+          <h1 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">
+            GitHub User Finder
+          </h1>
+        </div>
+
+        <p className="text-sm text-center sm:text-left mt-2 sm:mt-0">
+          To find the user's details using
           <a
             href="https://docs.github.com/en/rest?apiVersion=2022-11-28"
-            className="text-green-500"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-600 underline ml-1"
           >
-            {" "}
-            the GitHub API
+            GitHub API
           </a>
         </p>
       </nav>
-      <div className="max-w-md mx-auto mb-6 shadow-2xl">
+
+      {/* Search Form */}
+      <div className="max-w-xl w-full mx-auto px-4 mt-10">
         <form
-          className="flex rounded-md overflow-hidden border mt-20"
+          className="flex flex-col sm:flex-row rounded-md overflow-hidden border shadow-md"
           onSubmit={(e) => {
             e.preventDefault();
             FetchDetails(userName);
@@ -48,22 +59,21 @@ function App() {
         >
           <input
             type="text"
-            placeholder="Enter the username...."
+            placeholder="Enter the username..."
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            className="w-full px-4 py-3 text-gray-500"
+            className="w-full px-4 py-3 text-gray-700 border-b sm:border-b-0 sm:border-r border-gray-300"
           />
           <button
-            className="bg-gray-500 text-white hover:bg-gray-600 transition duration-300 cursor-pointer w-[150px]"
-            onClick={() => {
-              FetchDetails(userName);
-            }}
+            type="submit"
+            className="bg-gray-600 text-white px-6 py-3 hover:bg-gray-700 transition duration-300 w-full sm:w-[150px]"
           >
             Get Data
           </button>
         </form>
       </div>
 
+      {/* Profile Card */}
       <div className="p-4">{user && <ProfilePage contextData={user} />}</div>
     </div>
   );
