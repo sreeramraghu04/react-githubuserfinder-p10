@@ -8,6 +8,7 @@ function App() {
 
   const FetchDetails = async (userName) => {
     const { data } = await axios.get(
+      
       `https://api.github.com/users/${userName}`
     );
 
@@ -49,7 +50,7 @@ function App() {
       </nav>
 
       {/* Search Form */}
-      <div className="max-w-xl w-full mx-auto px-4 mt-10">
+      <div className="max-w-xl w-full mx-auto px-8 mt-10">
         <form
           className="flex flex-col sm:flex-row rounded-md overflow-hidden border shadow-md"
           onSubmit={(e) => {
