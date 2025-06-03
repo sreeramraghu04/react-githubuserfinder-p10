@@ -8,7 +8,6 @@ function App() {
 
   const FetchDetails = async (userName) => {
     const { data } = await axios.get(
-      
       `https://api.github.com/users/${userName}`
     );
 
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="bg-gray-300 shadow-xl px-4 py-3 flex flex-col sm:flex-row items-center sm:justify-between">
+      <nav className="bg-gray-300 shadow-xl px-3 sm:px-4 py-3 flex flex-col sm:flex-row items-center sm:justify-between gap-2">
         <div className="flex items-center gap-2">
           <a
             href="https://github.com/"
@@ -28,15 +27,15 @@ function App() {
             <img
               src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png"
               alt="GitHub logo"
-              className="w-14 p-1 rounded"
+              className="w-12 sm:w-14 p-1 rounded"
             />
           </a>
-          <h1 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">
+          <h1 className="font-bold text-xl sm:text-3xl text-center sm:text-left">
             GitHub User Finder
           </h1>
         </div>
 
-        <p className="text-sm text-center sm:text-left mt-2 sm:mt-0">
+        <p className="text-xs sm:text-sm text-center sm:text-left px-1 sm:px-0">
           To find the user's details using
           <a
             href="https://docs.github.com/en/rest?apiVersion=2022-11-28"
@@ -50,7 +49,7 @@ function App() {
       </nav>
 
       {/* Search Form */}
-      <div className="max-w-xl w-full mx-auto px-8 mt-10">
+      <div className="max-w-xl w-full mx-auto px-4 sm:px-8 mt-8">
         <form
           className="flex flex-col sm:flex-row rounded-md overflow-hidden border shadow-md"
           onSubmit={(e) => {
@@ -63,11 +62,11 @@ function App() {
             placeholder="Enter the username..."
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            className="w-full px-4 py-3 text-gray-700 border-b sm:border-b-0 sm:border-r border-gray-300"
+            className="w-full px-4 py-3 text-gray-700 border-b sm:border-b-0 sm:border-r border-gray-300 text-sm sm:text-base"
           />
           <button
             type="submit"
-            className="bg-gray-600 text-white px-6 py-3 hover:bg-gray-700 transition duration-300 w-full sm:w-[150px]"
+            className="bg-gray-600 text-white px-4 sm:px-6 py-3 hover:bg-gray-700 transition duration-300 w-full sm:w-[150px] text-sm sm:text-base"
           >
             Get Data
           </button>
@@ -75,7 +74,9 @@ function App() {
       </div>
 
       {/* Profile Card */}
-      <div className="p-4">{user && <ProfilePage contextData={user} />}</div>
+      <div className="p-3 sm:p-4">
+        {user && <ProfilePage contextData={user} />}
+      </div>
     </div>
   );
 }
