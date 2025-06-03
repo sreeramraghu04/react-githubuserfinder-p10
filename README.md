@@ -23,8 +23,12 @@ A simple and responsive web application built with **React**, **Axios**, and **T
 
 ## Screenshots
 
-![alt text](github-user-finder.png)
+- Large Screen
+  ![alt text](github-user-finder.png)
+
+- Small Screen
+  ![alt text](sm-githubuserfinder.png)
 
 ## links
 
-- [Live Demo](https://r-react-githubuserfinder.netlify.app/)
+- [Live Demo](https://ram-react-githubuserfinder.netlify.app/)
