@@ -29,6 +29,6 @@ A simple and responsive web application built with **React**, **Axios**, and **T
 - Small Screen
   ![alt text](sm-githubuserfinder.png)
 
-## links
+## Demo Link
 
 - [Live Demo](https://ram-react-githubuserfinder.netlify.app/)
